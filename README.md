@@ -98,37 +98,6 @@ source venv/bin/activate
 python app.py
 ```
 
-### 生产模式 (使用systemd服务)
-```bash
-# 创建服务文件
-sudo nano /etc/systemd/system/garbage-classifier.service
-```
-
-添加以下内容：
-```ini
-[Unit]
-Description=Garbage Classifier Web Service
-After=network.target
-
-[Service]
-User=pi
-WorkingDirectory=/home/pi/garbage-classifier
-Environment="PATH=/home/pi/garbage-classifier/venv/bin"
-ExecStart=/home/pi/garbage-classifier/venv/bin/python app.py
-Restart=always
-RestartSec=10
-
-[Install]
-WantedBy=multi-user.target
-```
-
-启用并启动服务：
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable garbage-classifier
-sudo systemctl start garbage-classifier
-sudo systemctl status garbage-classifier
-```
 
 ## 访问系统
 
