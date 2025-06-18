@@ -1,0 +1,25 @@
+# 环境文件
+.env
+
+# 虚拟环境
+venv/
+.env/
+
+# 缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 日志文件
+*.log
+
+# 百度API令牌缓存
+baidu_access_token.txt
+
+# IDE文件
+.idea/
+.vscode/
+
+# 系统文件
+.DS_Store
